@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --ligth-grayish-blue: hsl(210, 46%, 95%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --body-copy: 13px;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--ligth-grayish-blue);
+}
+
+.flex {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.product-card {
+  min-width: 330px;
+  width: 330px;
+  min-height: 280px;
+  height: 500px;
+  border-radius: 15px;
+  background-color: #fff;
+  margin: 0 25px 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0 0;
+  background-image: url("./images/drawers.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center -15px;
+}
+
+.product-card-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.card-copy {
+  padding: 35px 30px 20px;
+}
+
+.card-copy > h2 {
+  color: var(--dark-grayish-blue);
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  line-height: 1.6em;
+}
+.card-copy > p {
+  color: var(--desaturated-dark-blue);
+  font-size: var(--body-copy);
+  letter-spacing: 0.3px;
+  line-height: 1.6em;
+}
+
+.product-card-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 10px 25px 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.product-user-data {
+  display: flex;
+}
+
+.product-user-data > img {
+  border-radius: 50%;
+  max-height: 40px;
+  align-self: center;
+  margin-right: 15px;
+}
+
+.product-share {
+  display: none;
+}
+
+.user-details {
+  margin: auto;
+}
+
+.user-details > h3 {
+  color: var(--dark-grayish-blue);
+  font-size: var(--body-copy);
+  font-weight: 700;
+}
+.user-details > p {
+  color: var(--grayish-blue);
+  font-size: var(--body-copy);
+}
+
+.share-button {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--ligth-grayish-blue);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.share-button:focus {
+  outline: 0;
+}
+
+.share-button > i {
+  color: var(--desaturated-dark-blue);
+  transition: all 0.4s ease-in-out;
+}
+
+#footer.--share-shown {
+  background-color: var(--dark-grayish-blue);
+}
+
+#footer.--share-shown .product-user-data {
+  display: none;
+}
+#footer.--share-shown .product-share {
+  display: flex;
+  color: var(--grayish-blue);
+  justify-content: space-evenly;
+  width: 75%;
+  font-size: var(--body-copy);
+}
+
+#footer.--share-shown .product-share > i {
+  height: 20x;
+}
+
+#footer.--share-shown #share-button {
+  background-color: var(--desaturated-dark-blue);
+}
+#footer.--share-shown #share-button > i {
+  color: #fff;
+}
+
+@media screen and (min-width: 785px) {
+  .product-card {
+    width: 730px;
+    height: 280px;
+    flex-direction: row;
+  }
+  .product-card-img {
+    height: 280px;
+    width: 290px;
+    border-radius: 15px 0 0 15px;
+    background-position: -5px -5px;
+    background-size: 125%;
+  }
+  .product-card-body {
+    width: 450px;
+  }
+  #footer.--share-shown {
+    background-color: #fff;
+  }
+  #footer.--share-shown .product-user-data {
+    display: flex;
+  }
+  #footer.--share-shown .product-share {
+    display: flex;
+    background-color: var(--dark-grayish-blue);
+    position: absolute;
+    padding: 15px 20px;
+    top: -60px;
+    left: 290px;
+    border-radius: 15px;
+    justify-content: space-around;
+    width: 50%;
+  }
+  #footer.--share-shown .product-share::after {
+    content: "";
+    background-color: var(--dark-grayish-blue);
+    width: 1.6em;
+    height: 1.6em;
+    position: absolute;
+    bottom: -20%;
+    transform: rotate(45deg);
+  }
+}
+
+.attribution {
+  font-size: var(--body-copy);
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
